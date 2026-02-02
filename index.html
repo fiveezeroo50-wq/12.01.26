@@ -24,6 +24,20 @@
     </p>
 
     <button onclick="changeText()">Spied!</button>
+
+	<h2>Kontakta forma</h2>
+
+<form onsubmit="return validateForm()">
+  <label>Vārds:</label><br>
+  <input type="text" id="name"><br><br>
+
+  <label>E-pasts:</label><br>
+  <input type="text" id="email"><br><br>
+
+  <button type="submit">Iesniegt</button>
+</form>
+
+<p id="error" style="color:red;"></p>
 </main>
 
 <footer>
@@ -34,4 +48,5 @@
 </body>
 
 </html>
+
 
