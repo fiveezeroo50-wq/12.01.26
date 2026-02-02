@@ -4,7 +4,7 @@ function changeText() {
     let paragraph = document.querySelector("main p");
 
     if (paragraph.innerText.includes("Wikipedia")) {
-        paragraph.innerText = "Tu nupat mainīji lapas saturu ar JavaScript funkciju!";
+        paragraph.innerText = "JS funkciju!";
         paragraph.style.color = "green";
         paragraph.style.fontWeight = "bold";
     } else {
@@ -13,3 +13,4 @@ function changeText() {
         paragraph.style.fontWeight = "normal";
     }
 }
+
