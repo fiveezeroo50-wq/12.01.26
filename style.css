@@ -1,34 +1,237 @@
-body {
-    background-color: #f0f4f8;
-    font-family: Times New Roman, serif;
+/* Telpu nomu sistēmas stili
+   ID selektori: #page-title, #description, #rental-form, #hours, #day-type, #calculate-btn, #result-display
+   Class selektori: .description-section, .input-section, .input-group, .action-button, .result-section,
+   .result-display, .result-content, .result-details, .total-price, .error-message, .workday, .weekend
+*/
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header, footer {
-    background-color: #2c3e50;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-main {
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
     padding: 20px;
     color: #333;
 }
 
-a {
-    color: #0066cc;
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-button {
-    padding: 10px 15px;
-    background-color: #27ae60;
+#page-title {
+    color: #667eea;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.description-section {
+    margin-bottom: 30px;
+}
+
+#description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
+.input-section {
+    margin-bottom: 30px;
+}
+
+#rental-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 1em;
+}
+
+.input-group input,
+.input-group select {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+#hours,
+#day-type {
+    width: 100%;
+    max-width: 280px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.action-button,
+#calculate-btn {
+    padding: 15px 30px;
+    background-color: #3498db;
     color: white;
     border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-button:hover {
-    background-color: #111111;
+.action-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.action-button:active,
+#calculate-btn:active {
+    transform: translateY(0);
+}
+
+.result-section {
+    margin-top: 30px;
+}
+
+.result-display,
+#result-display {
+    padding: 25px;
+    border-radius: 8px;
+    min-height: 100px;
+    transition: all 0.3s ease;
+}
+
+.result-display.success {
+    background-color: #f8f9fa;
+    border: 2px solid #27ae60;
+}
+
+.result-display.error {
+    background-color: #fee;
+    border: 2px solid #e74c3c;
+}
+
+.result-content {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-content h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.result-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result-details p {
+    font-size: 1.1em;
+    color: #555;
+    padding: 8px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.result-content.workday .result-details p {
+    border-left: 4px solid #27ae60;
+}
+
+.result-content.weekend .result-details p {
+    border-left: 4px solid #e74c3c;
+}
+
+.total-price {
+    font-size: 1.3em !important;
+    font-weight: bold;
+    color: #667eea !important;
+    background-color: #f0f4ff !important;
+    padding: 15px !important;
+    margin-top: 10px !important;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Responsive dizains */
+@media (max-width: 600px) {
+    #page-title {
+        font-size: 2em;
+    }
+
+    #hours,
+    #day-type {
+        max-width: 100%;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .result-details p {
+        font-size: 1em;
+    }
 }
