@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-<style type="text/css">
-    body{text-align:center}
-	</style>
     <meta charset="UTF-8">
-    <title>Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telpu noma</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 1. Virsraksts (mājaslapas/produkta nosaukums) -->
+    <header>
+        <h1 id="page-title">Telpu noma</h1>
+    </header>
 
-<header>
-    <h1>Mana tīmekļa lapa</h1>
-</header>
+    <main>
+        <!-- 2. Apraksts (īss skaidrojums par pakalpojumu) -->
+        <section class="description-section">
+            <p id="description">
+                Pasūtiet telpas nomu jūsu pasākumiem! Mēs piedāvājam modernas un ērtas telpas 
+                dažādiem pasākumiem - sapulcēm, semināriem, izglītības pasākumiem un citiem 
+                pasākumiem. Izvēlieties stundu skaitu un dienas veidu, lai uzzinātu precīzu cenu.
+            </p>
+        </section>
 
-<main>
-    <p>
-        Wikipedia ir brīva daudzvalodu tiešsaistes enciklopēdija, kuru veido brīvprātīgie no visas pasaules.
-        Avots:
-        <a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank">
-            Wikipedia galvenā lapa
-        </a>
-    </p>
+        <!-- 3. Lietotāja ievades sadaļa (ievades lauki: daudzums, izvēle) -->
+        <section class="input-section">
+            <form id="rental-form">
+                <div class="input-group">
+                    <label for="hours">Stundu skaits:</label>
+                    <input type="number" id="hours" name="hours" min="1" placeholder="Ievadiet stundu skaitu" required>
+                </div>
 
-    <button onclick="changeText()">Spied!</button>
+                <div class="input-group">
+                    <label for="day-type">Dienas veids:</label>
+                    <select id="day-type" name="day-type" required>
+                        <option value="">Izvēlieties dienas veidu</option>
+                        <option value="workday">Darba diena</option>
+                        <option value="weekend">Brīvdiena</option>
+                    </select>
+                </div>
 
-	<h2>Kontakta forma</h2>
+                <!-- 4. Darbības poga (aktivizē JavaScript funkcionalitāti) -->
+                <button type="submit" id="calculate-btn" class="action-button">Aprēķināt cenu</button>
+            </form>
+        </section>
 
-<form onsubmit="return validateForm()">
-  <label>Vārds:</label><br>
-  <input type="text" id="name"><br><br>
+        <!-- 5. Rezultāta attēlošanas sadaļa (aprēķina rezultāts) -->
+        <section class="result-section">
+            <div id="result-display" class="result-display"></div>
+        </section>
+    </main>
 
-  <label>E-pasts:</label><br>
-  <input type="text" id="email"><br><br>
+    <footer>
+        <p>Telpu nomu sistēma © 2026</p>
+    </footer>
 
-  <button type="submit">Iesniegt</button>
-</form>
-
-<p id="error" style="color:red;"></p>
-</main>
-
-<footer>
-    <p>Projekts</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
-
-
