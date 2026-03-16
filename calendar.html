@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalendārs — dienas izvēle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="calendar-page">
+    <header>
+        <h1 id="page-title">Dienas izvēle</h1>
+    </header>
+
+    <main class="calendar-main">
+        <section class="calendar-shell" aria-label="Kalendārs dienas izvēlei">
+            <div class="calendar-top">
+                <div>
+                    <h2 class="calendar-month">Maijs</h2>
+                    <p class="calendar-subtitle">Izvēlies brīvu dienu (aizņemtās ir sarkanas kā teātrī).</p>
+                </div>
+                <div class="calendar-legend" aria-label="Leģenda">
+                    <span class="legend-item"><span class="legend-dot available" aria-hidden="true"></span>Brīvs</span>
+                    <span class="legend-item"><span class="legend-dot taken" aria-hidden="true"></span>Aizņemts</span>
+                    <span class="legend-item"><span class="legend-dot selected" aria-hidden="true"></span>Izvēlēts</span>
+                </div>
+            </div>
+
+            <div class="calendar-weekdays" aria-hidden="true">
+                <div>Pr</div><div>Ot</div><div>Tr</div><div>Ct</div><div>Pk</div><div>Se</div><div>Sv</div>
+            </div>
+
+            <div id="calendar-grid" class="calendar-grid big" role="grid" aria-label="Dienu izvēle"></div>
+
+            <div class="calendar-actions">
+                <div id="calendar-status" class="calendar-status" aria-live="polite">Nav izvēlēta.</div>
+                <div class="calendar-buttons">
+                    <button type="button" id="clear-btn" class="secondary-button">Notīrīt</button>
+                    <button type="button" id="save-btn" class="action-button">Saglabāt izvēli</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Telpu nomu sistēma © 2026</p>
+    </footer>
+
+    <script src="calendar.js"></script>
+</body>
+</html>
