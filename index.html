@@ -39,6 +39,15 @@
                     </select>
                 </div>
 
+                <div class="input-group">
+                    <label>Diena:</label>
+                    <div class="day-picker-row">
+                        <button type="button" id="open-calendar-btn" class="secondary-button">Izvēlēties dienu</button>
+                        <div id="selected-day-badge" class="selected-day-badge" aria-live="polite">Nav izvēlēta</div>
+                    </div>
+                    <input type="hidden" id="selected-day" name="selected-day" value="">
+                </div>
+
                 <!-- 4. Darbības poga (aktivizē JavaScript funkcionalitāti) -->
                 <button type="submit" id="calculate-btn" class="action-button">Aprēķināt cenu</button>
             </form>
